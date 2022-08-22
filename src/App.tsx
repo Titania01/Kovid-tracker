@@ -11,6 +11,7 @@ import Card from "./molecules/Card";
 import LineChart from "./molecules/Chart";
 import BarChart from "./molecules/Chart";
 import Table from "./molecules/Table";
+import Loader from "./molecules/Loader";
 
 // interface cardArrayType {
 //   title: string;
@@ -60,27 +61,35 @@ function App() {
   const labels = stat?.states?.map((n: any) => n.state);
   const data = stat?.states?.map((n: any) => parseInt(n.confirmedCases));
   return (
-    <div className="bg-primary  h-screen overflow-hidden flex flex-col text-white">
-      <div>
-        <Navbar />
-      </div>
-      <section className="flex-grow overflow-auto">
-        <div className="px-[3.5rem] pt-[2.5rem]">
-          <div className="card-wrapper">
-            {cardArray.map(({ color, title, value }, key) => (
-              <Card color={color} title={title} value={value} key={key} />
-            ))}
+    <>
+      {Object.entries(stat).length !== 0 ? (
+        <div className="bg-primary  h-screen overflow-hidden flex flex-col text-white">
+          <div>
+            <Navbar />
           </div>
+          <section className="flex-grow overflow-auto">
+            <div className="px-[3.5rem] pt-[2.5rem]">
+              <div className="card-wrapper">
+                {cardArray.map(({ color, title, value }, key) => (
+                  <Card color={color} title={title} value={value} key={key} />
+                ))}
+              </div>
+            </div>
+            <div className="w-11/12 mx-auto bg-white mt-12 rounded-md">
+              <h2 className="text-black">
+                Confirmed cases across the 37 states
+              </h2>
+              <BarChart data={data} label={labels} />
+            </div>
+            <div className="my-6" style={{ minHeight: "100vh" }}>
+              <Table />
+            </div>
+          </section>
         </div>
-        <div className="w-11/12 mx-auto bg-white mt-12 rounded-md">
-          <h2 className="text-black">Confirmed cases across the 37 states</h2>
-          <BarChart data={data} label={labels} />
-        </div>
-        <div className="my-6" style={{ minHeight: "100vh" }}>
-          <Table />
-        </div>
-      </section>
-    </div>
+      ) : (
+        <Loader />
+      )}
+    </>
   );
 }
 
