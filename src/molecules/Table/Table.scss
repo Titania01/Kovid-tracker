@@ -1,0 +1,25 @@
+table {
+  width: 1000px;
+  height: 200px;
+  margin: auto;
+}
+
+th {
+  border-bottom: 1px solid black;
+  text-align: start;
+  background-color: #64a8e6;
+}
+th:nth-child(6) {
+  background-color: red;
+}
+td {
+  text-align: start;
+  padding: 0.5rem;
+}
+td:nth-child(6) {
+  background-color: red;
+}
+th,
+td {
+  height: 64px;
+}

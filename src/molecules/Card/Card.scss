@@ -1,0 +1,12 @@
+.card-bg {
+  @apply bg-blue2 flex flex-col w-[15rem] rounded-lg px-6 py-4;
+}
+.card-wrapper {
+  @apply flex justify-between;
+}
+.card-title {
+  @apply mb-4 font-bold;
+}
+.value {
+  @apply text-4xl;
+}

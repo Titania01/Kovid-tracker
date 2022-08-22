@@ -1,0 +1,25 @@
+.nav-wrapper {
+  @apply flex items-center justify-between py-6 px-12 shadow-2xl;
+  .logo-wrap {
+    @apply flex gap-2 items-center cursor-pointer;
+
+    .logo-title {
+      @apply text-[#64A8E6] text-2xl font-bold;
+    }
+  }
+  .nav-about {
+    @apply flex gap-8 items-center text-white font-semibold;
+
+    p {
+      @apply cursor-pointer;
+    }
+  }
+
+  .nav-box {
+    @apply flex items-center justify-center font-semibold border border-solid border-lightBlue rounded-2xl;
+
+    .text {
+      @apply py-3 px-8 cursor-pointer;
+    }
+  }
+}
