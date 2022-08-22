@@ -1,5 +1,5 @@
 table {
-  width: 1000px;
+  width: 1200px;
   height: 200px;
   margin: auto;
 }
@@ -8,6 +8,7 @@ th {
   border-bottom: 1px solid black;
   text-align: start;
   background-color: #64a8e6;
+  padding: 0.5rem;
 }
 th:nth-child(6) {
   background-color: red;
@@ -19,7 +20,8 @@ td {
 td:nth-child(6) {
   background-color: red;
 }
-th,
-td {
-  height: 64px;
+tr {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
 }
