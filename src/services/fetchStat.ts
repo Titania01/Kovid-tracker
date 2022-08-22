@@ -1,14 +1,13 @@
-import { useDispatch } from "react-redux";
-import { fetchStat } from "../store/action";
-import axios from 'axios';
+import axios from "axios";
+import { baseUrl } from "../utils.config";
 
 function fetchProducts() {
-    return axios.get('https://covidnigeria.herokuapp.com/api')
-        .then(res => (res.data.data))
-        .catch(error => {
-            console.log(error)
-        })
-    }
-
+  return axios
+    .get(baseUrl)
+    .then((res) => res.data.data)
+    .catch((error) => {
+      console.log(error);
+    });
+}
 
 export default fetchProducts;

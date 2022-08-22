@@ -1,22 +1,25 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import fetchProducts from "./services/fetchStat";
-import { fetchStat, saveStat } from "./store/action";
+import { fetchStat } from "./store/action";
+
+import { Dispatch } from "redux";
+import { initializeFetchStat } from "./store/actionAsync";
 
 function App() {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<Dispatch<any>>();
+  const stat = useSelector((state: any) => state.stat);
+
+  console.log(stat);
 
   useEffect(() => {
-    fetchProducts().then((res: any) => {
-      dispatch(fetchStat(res));
-      return res;
-    });
+    dispatch(initializeFetchStat());
   }, []);
 
-  const s = useSelector((store) => store.stat);
   return (
     <div className="text-3xl font-bold underline">
       <h1>Hello World!</h1>
+      <h1>{JSON.stringify(stat, null, 2)}</h1>
     </div>
   );
 }

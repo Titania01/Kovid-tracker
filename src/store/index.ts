@@ -1,10 +1,6 @@
-import { applyMiddleware, createStore } from 'redux'
-import thunk from 'redux-thunk'
-import  statReducer  from './reducers'
 
-const initialState =  {
-    stat: {}
-}
+import { applyMiddleware, createStore } from "redux";
+import thunk from "redux-thunk";
+import statReducer from "./reducers";
 
-
-export default createStore(statReducer,initialState, applyMiddleware(thunk))
+export default createStore(statReducer, applyMiddleware(thunk));
