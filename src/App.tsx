@@ -1,25 +1,12 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import fetchProducts from "./services/fetchStat";
-import { fetchStat } from "./store/action";
-
 import { Dispatch } from "redux";
 import { initializeFetchStat } from "./store/actionAsync";
-import PageLayout from "./templates/PageLayout";
 import Navbar from "./molecules/Navbar";
 import Card from "./molecules/Card";
-import LineChart from "./molecules/Chart";
 import BarChart from "./molecules/Chart";
 import Table from "./molecules/Table";
 import Loader from "./molecules/Loader";
-
-// interface cardArrayType {
-//   title: string;
-//   value: string | number;
-// }
-
-// const labels = stat?.map((n: any) => moment(n.day).format("MMM DD"));
-// const data = stat?.map((n: any) => parseInt(n.total_deposit));
 
 function App() {
   const dispatch = useDispatch<Dispatch<any>>();
@@ -76,8 +63,8 @@ function App() {
               </div>
             </div>
             <div className="w-11/12 mx-auto bg-white mt-12 rounded-md">
-              <h2 className="text-black">
-                Confirmed cases across the 37 states
+              <h2 className="text-black text-center">
+                Confirmed cases across the 36 states and FCT
               </h2>
               <BarChart data={data} label={labels} />
             </div>
