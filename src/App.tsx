@@ -12,8 +12,6 @@ function App() {
   const dispatch = useDispatch<Dispatch<any>>();
   const stat = useSelector((state: any) => state.stat);
 
-  console.log(stat);
-
   const cardArray = [
     {
       title: "Total Sample Tested",
@@ -63,7 +61,7 @@ function App() {
               </div>
             </div>
             <div className="w-11/12 mx-auto bg-white mt-12 rounded-md">
-              <h2 className="text-black text-center">
+              <h2 className="text-black text-center p-4 font-bold text-2xl text-[#9972FF]">
                 Confirmed cases across the 36 states and FCT
               </h2>
               <BarChart data={data} label={labels} />

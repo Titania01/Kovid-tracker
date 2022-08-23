@@ -32,23 +32,25 @@ const Table = () => {
         </div>
       </div>
       <table>
-        <tr>
-          {header.map((h) => (
-            <th>{h}</th>
-          ))}
-        </tr>
-        {dataToShow?.map((val: any, key: number) => {
-          return (
-            <tr key={key}>
-              <td>{key + 1}</td>
-              <td>{val.state}</td>
-              <td>{val.confirmedCases}</td>
-              <td>{val.casesOnAdmission}</td>
-              <td>{val.discharged}</td>
-              <td>{val.death}</td>
-            </tr>
-          );
-        })}
+        <thead>
+          <tr>
+            {header.map((h, i) => (
+              <th key={i}>{h}</th>
+            ))}
+          </tr>
+          {dataToShow?.map((val: any, key: number) => {
+            return (
+              <tr key={key}>
+                <td>{key + 1}</td>
+                <td>{val.state}</td>
+                <td>{val.confirmedCases}</td>
+                <td>{val.casesOnAdmission}</td>
+                <td>{val.discharged}</td>
+                <td>{val.death}</td>
+              </tr>
+            );
+          })}
+        </thead>
       </table>
     </div>
   );
