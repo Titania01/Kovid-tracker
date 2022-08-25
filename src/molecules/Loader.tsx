@@ -1,4 +1,3 @@
-import React from "react";
 import CovidLogo from "../atoms/vectors/Logo";
 
 const Loader = () => {
