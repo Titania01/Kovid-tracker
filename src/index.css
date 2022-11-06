@@ -12,4 +12,11 @@ html,body {
 :root{
     font-size: 1rem;
 }
+
+@media (640px) {
+    :root {
+        font-size: 10px
+    }
+}
+
 @tailwind utilities;

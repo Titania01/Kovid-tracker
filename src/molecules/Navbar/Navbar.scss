@@ -8,7 +8,7 @@
     }
   }
   .nav-about {
-    @apply flex gap-8 items-center text-white font-semibold;
+    @apply hidden md:flex gap-8 items-center text-white font-semibold;
 
     p {
       @apply cursor-pointer;
