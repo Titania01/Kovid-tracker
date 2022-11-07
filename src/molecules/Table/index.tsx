@@ -27,7 +27,7 @@ const Table = () => {
     <div className="w-11/12 mx-auto">
       <div className="flex items-center justify-between mb-6">
         <h3>Cases per state</h3>
-        <div className="w-[25rem]">
+        <div className="w-[25rem] pl-4 md:pl-0">
           <SearchBox value={form} onChange={(e) => setForm(e.target.value)} />
         </div>
       </div>
