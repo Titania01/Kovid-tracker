@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <div className="nav-wrapper">
       <div className="logo-wrap">
-        {/* <CovidLogo /> */}
+        <CovidLogo />
         <p className="logo-title">Kovid-19</p>
       </div>
       <div className="nav-about">

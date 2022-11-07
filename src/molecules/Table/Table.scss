@@ -2,6 +2,10 @@ table {
   width: 1200px;
   height: 200px;
   margin: auto;
+
+  @media (max-width: 480px) {
+    width: 380px;
+  }
 }
 
 th {
@@ -9,6 +13,11 @@ th {
   text-align: start;
   background-color: #64a8e6;
   padding: 0.5rem;
+
+  @media (max-width: 480px) {
+    font-size: 12px;
+    padding: 0.2rem;
+  }
 }
 th:nth-child(6) {
   background-color: red;
@@ -16,6 +25,11 @@ th:nth-child(6) {
 td {
   text-align: start;
   padding: 0.5rem;
+
+  @media (max-width: 480px) {
+    font-size: 12px;
+    padding: 0.2rem;
+  }
 }
 td:nth-child(6) {
   background-color: red;
